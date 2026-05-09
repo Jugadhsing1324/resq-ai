@@ -16,7 +16,7 @@
  * For a student project demo, pasting it here is fine — just keep
  * the project private or use environment variables in production.
  */
-const GEMINI_API_KEY = "AIzaSyD0dqGAVO-xvQh0_DLC85M1PSpn_wuwwxM"; // <-- Replace this
+const GEMINI_API_KEY = "AIzaSyB_qkBRHIkJCm73QhcUmxfzdu61d9DOf-s"; // <-- Replace this
 
 
 // Gemini model to use — gemini-1.5-flash is fast and free-tier friendly
