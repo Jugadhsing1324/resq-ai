@@ -20,7 +20,7 @@ const GEMINI_API_KEY = "AIzaSyB_qkBRHIkJCm73QhcUmxfzdu61d9DOf-s"; // <-- Replace
 
 
 // Gemini model to use — gemini-1.5-flash is fast and free-tier friendly
-const GEMINI_MODEL = "gemini-3-flash-preview";
+const GEMINI_MODEL = "gemini-2.5-flash-lite";
 
 // Gemini API endpoint
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
