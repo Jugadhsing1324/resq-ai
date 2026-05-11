@@ -1,17 +1,11 @@
-/* ============================================================
-   ResQ AI — style.css
-   SUPERMAN COMIC-BOOK UNIVERSE EDITION
-   ============================================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Anton&family=Special+Elite&display=swap');
 
-/* ── SUPERMAN TOKENS ──────────────────────────────────────── */
 :root {
-  /* Superman palette — canonical colors */
+  
   --bg:               #0a0a12;
   --bg2:              #0d0d18;
   --bg3:              #121220;
-  --paper:            #f5f0e8;   /* aged newsprint */
+  --paper:            #f5f0e8;   
   --paper-dark:       #d4c9a8;
 
   --superman-red:     #c8102e;
@@ -22,7 +16,7 @@
   --superman-gold-b:  #ffc700;
   --ink:              #1a0505;
 
-  /* Aliases for backward compat */
+  
   --red:              var(--superman-red);
   --red-b:            var(--superman-red-b);
   --gold:             var(--superman-gold);
@@ -42,32 +36,31 @@
   --text-muted:  #8a8070;
   --text-dim:    #3a3028;
 
-  /* Comic typography */
+  
   --f-display: 'Bangers', 'Impact', sans-serif;
   --f-comic:   'Bebas Neue', 'Anton', sans-serif;
   --f-cond:    'Barlow Condensed', sans-serif;
   --f-body:    'Barlow Condensed', sans-serif;
   --f-news:    'Special Elite', Georgia, serif;
 
-  --r:    0px;        /* No border radius — comic book is angular */
+  --r:    0px;        
   --r-sm: 0px;
   --r-lg: 2px;
 
-  /* Comic ink shadows */
+  
   --shadow:       4px 4px 0px rgba(0,0,0,0.8);
   --shadow-hero:  6px 6px 0px rgba(0,0,0,0.9);
   --glow-red:     0 0 24px rgba(200,16,46,0.6), 0 0 60px rgba(200,16,46,0.25);
   --glow-gold:    0 0 20px rgba(255,221,0,0.5), 0 0 50px rgba(255,221,0,0.2);
   --glow-blue:    0 0 20px rgba(0,48,135,0.5);
 
-  /* Comic card border */
+  
   --comic-border: 3px solid #000;
   --comic-border-red: 3px solid var(--superman-red);
   --comic-border-blue: 3px solid var(--superman-blue);
   --comic-border-gold: 3px solid var(--superman-gold);
 }
 
-/* ── RESET ──────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 a { text-decoration: none; color: inherit; }
@@ -80,7 +73,6 @@ ul, ol { list-style: none; }
   border-radius: 0px; 
 }
 
-/* ── BODY ───────────────────────────────────────────────── */
 body {
   background: var(--bg);
   color: var(--text);
@@ -89,7 +81,7 @@ body {
   font-weight: 600;
   line-height: 1.55;
   overflow-x: hidden;
-  /* Halftone comic texture — bold dots */
+  
   background-image:
     radial-gradient(circle, rgba(200,16,46,0.025) 1.5px, transparent 1.5px),
     radial-gradient(circle, rgba(0,48,135,0.018) 1px, transparent 1px);
@@ -97,10 +89,8 @@ body {
   background-position: 0 0, 9px 9px;
 }
 
-/* ── UTILITY ────────────────────────────────────────────── */
 .accent { color: var(--superman-red); }
 
-/* COMIC CARD — the core design element */
 .comic-card {
   background: rgba(10, 8, 20, 0.88);
   border: var(--comic-border);
@@ -112,7 +102,7 @@ body {
     inset 0 0 60px rgba(0,0,0,0.5);
   transition: transform .15s, box-shadow .15s, border-color .2s;
   position: relative;
-  /* Subtle halftone inside cards */
+  
   background-image:
     radial-gradient(circle, rgba(255,255,255,0.012) 1px, transparent 1px);
   background-size: 12px 12px;
@@ -125,7 +115,7 @@ body {
     inset 0 0 60px rgba(0,0,0,0.5);
   border-color: var(--superman-red);
 }
-/* Inner glow line on comic cards */
+
 .comic-card::before {
   content: '';
   position: absolute;
@@ -134,7 +124,6 @@ body {
   pointer-events: none;
 }
 
-/* glass-card aliased to comic-card for backward compat */
 .glass-card {
   background: rgba(10, 8, 20, 0.88);
   border: var(--comic-border);
@@ -150,10 +139,6 @@ body {
   border-color: var(--superman-red);
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   WORLD BACKGROUND — Metropolis at night
-═══════════════════════════════════════════════════════════ */
 .world-bg {
   position: fixed;
   inset: 0;
@@ -162,7 +147,6 @@ body {
   overflow: hidden;
 }
 
-/* Halftone overlay — comic book printing feel */
 .bg-halftone {
   position: absolute;
   inset: 0;
@@ -173,7 +157,6 @@ body {
   background-position: 0 0, 11px 11px;
 }
 
-/* Metropolis skyline silhouette */
 .bg-skyline {
   position: absolute;
   bottom: 0;
@@ -181,7 +164,7 @@ body {
   right: 0;
   height: 340px;
   background: 
-    /* Buildings — dark silhouettes */
+    
     linear-gradient(to right,
       transparent 0%, transparent 3%, 
       rgba(0,48,135,0.04) 3%, rgba(0,48,135,0.04) 6%,
@@ -197,7 +180,6 @@ body {
   -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
 }
 
-/* Ink splatter decorative elements */
 .bg-ink-splat {
   position: absolute;
   border-radius: 50%;
@@ -214,7 +196,6 @@ body {
   bottom: -100px; right: -100px;
 }
 
-/* Speed lines */
 .bg-speedlines {
   position: absolute;
   inset: 0;
@@ -222,7 +203,6 @@ body {
   opacity: 0.9;
 }
 
-/* Giant shield crest watermark */
 .bg-crest {
   position: absolute;
   width: min(70vw, 720px);
@@ -233,7 +213,6 @@ body {
   opacity: 1;
 }
 
-/* Atmospheric color blooms */
 .bg-glow {
   position: absolute;
   border-radius: 50%;
@@ -255,7 +234,6 @@ body {
   bottom: 5%; left: 15%;
 }
 
-/* Comic corner accents — thick ink borders */
 .corner-acc {
   position: fixed;
   width: 100px; height: 100px;
@@ -265,10 +243,6 @@ body {
 .bot-left  { bottom: 0; left: 0; }
 .bot-right { bottom: 0; right: 0; }
 
-
-/* ═══════════════════════════════════════════════════════════
-   DAILY PLANET TICKER BAR
-═══════════════════════════════════════════════════════════ */
 .daily-planet-bar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -309,10 +283,6 @@ body {
   padding-left: 20px;
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   NAVBAR — Daily Planet masthead
-═══════════════════════════════════════════════════════════ */
 .navbar {
   position: fixed;
   top: 26px; left: 0; right: 0;
@@ -328,7 +298,6 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
-/* Gold + Blue stripe accent — Superman colors */
 .navbar-stripes {
   position: absolute;
   bottom: -6px; left: 0; right: 0;
@@ -344,7 +313,6 @@ body {
   opacity: 0.6;
 }
 
-/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -382,7 +350,6 @@ body {
   text-transform: uppercase;
 }
 
-/* Nav links */
 .nav-links-wrap {
   position: relative;
   display: flex;
@@ -431,7 +398,6 @@ body {
   opacity: 0.5;
 }
 
-/* CTA — comic action button */
 .nav-respond-btn {
   position: relative;
   display: flex;
@@ -464,10 +430,6 @@ body {
   box-shadow: 0 0 8px var(--superman-gold);
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   HERO SECTION — Superman splash page
-═══════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
   z-index: 1;
@@ -479,7 +441,6 @@ body {
   overflow: hidden;
 }
 
-/* Diagonal cinematic slash */
 .hero-slash {
   position: absolute;
   inset: 0;
@@ -493,7 +454,6 @@ body {
   pointer-events: none;
 }
 
-/* Comic panel borders — thick ink lines */
 .hero-panel-border {
   position: absolute;
   left: 0; right: 0;
@@ -504,7 +464,6 @@ body {
 .hero-panel-border.top { top: 92px; }
 .hero-panel-border.bot { bottom: 0; }
 
-/* Left vertical accent bar */
 .hero::before {
   content: '';
   position: absolute;
@@ -514,7 +473,6 @@ body {
   opacity: 0.7;
 }
 
-/* ZAP / POW action burst words */
 .action-burst {
   position: absolute;
   font-family: var(--f-display);
@@ -532,7 +490,6 @@ body {
 .b1 { font-size: 140px; top: 5%; right: 2%; transform: rotate(10deg); }
 .b2 { font-size: 110px; bottom: 8%; left: 42%; transform: rotate(-7deg); opacity: 0.055; }
 
-/* Vertical side ticker */
 .side-ticker {
   position: absolute;
   right: -14px;
@@ -554,7 +511,6 @@ body {
   text-transform: uppercase;
 }
 
-/* ── HERO LEFT COPY ── */
 .hero-copy {
   max-width: 580px;
   z-index: 2;
@@ -583,7 +539,6 @@ body {
   box-shadow: 0 0 6px var(--superman-red);
 }
 
-/* THE MAIN HEADLINE — massive comic poster energy */
 .hero-h1 {
   display: flex;
   flex-direction: column;
@@ -609,7 +564,7 @@ body {
   color: var(--text);
   text-transform: uppercase;
   line-height: 0.88;
-  /* Bold comic ink outline effect */
+  
   text-shadow: 
     4px 4px 0px #000,
     -1px -1px 0 rgba(200,16,46,0.3),
@@ -624,7 +579,6 @@ body {
   -webkit-text-stroke: 1px #000;
 }
 
-/* Comic speech bubble for hero body text */
 .speech-bubble {
   position: relative;
   background: var(--paper);
@@ -663,7 +617,6 @@ body {
   font-style: italic;
 }
 
-/* Hero rule */
 .hero-rule {
   display: flex;
   align-items: center;
@@ -693,7 +646,6 @@ body {
 }
 .dsk { display: block; }
 
-/* CTAs */
 .hero-ctas {
   display: flex;
   align-items: center;
@@ -703,7 +655,6 @@ body {
   animation: fadeUp .5s .2s ease both;
 }
 
-/* Primary CTA — Superman action button */
 .cta-primary {
   display: inline-flex;
   align-items: center;
@@ -731,7 +682,6 @@ body {
   text-shadow: none;
 }
 
-/* Ghost CTA */
 .cta-ghost {
   font-family: var(--f-display);
   font-size: 14px;
@@ -748,7 +698,6 @@ body {
   border-color: var(--superman-gold);
 }
 
-/* Stats strip */
 .hero-stats {
   display: flex;
   align-items: center;
@@ -777,7 +726,6 @@ body {
   font-size: 22px;
 }
 
-/* Scroll hint */
 .hero-scroll {
   position: absolute;
   bottom: 24px;
@@ -800,7 +748,6 @@ body {
   color: var(--superman-gold);
 }
 
-/* ── HERO RIGHT VISUAL ── */
 .hero-vis {
   position: relative;
   width: 360px;
@@ -813,7 +760,6 @@ body {
   animation: fadeUp .5s .12s ease both;
 }
 
-/* Radar rings — Superman blue */
 .rring {
   position: absolute;
   border-radius: 50%;
@@ -823,7 +769,6 @@ body {
 .r2 { width: 240px; height: 240px; animation: ringPulse 3s .5s ease-in-out infinite; border-color: rgba(0,48,135,0.2); }
 .r3 { width: 330px; height: 330px; animation: ringPulse 3s 1s ease-in-out infinite; border-color: rgba(255,221,0,0.12); }
 
-/* Radar sweep — red */
 .rsweep {
   position: absolute;
   width: 48%;
@@ -835,7 +780,6 @@ body {
   filter: drop-shadow(0 0 5px var(--superman-red));
 }
 
-/* Shield visual — full Superman S-shield */
 .shield-wrap {
   position: relative;
   z-index: 3;
@@ -858,7 +802,6 @@ body {
   pointer-events: none;
 }
 
-/* Emergency type tags — comic caption boxes */
 .htag {
   position: absolute;
   font-family: var(--f-display);
@@ -877,10 +820,6 @@ body {
 .t3 { bottom: 38px; left: 8px; animation: tagFloat 4s 1.6s ease-in-out infinite; background: var(--superman-blue); color: #fff; }
 .t4 { bottom: 22px; right:18px;animation: tagFloat 4s 2.4s ease-in-out infinite; }
 
-
-/* ═══════════════════════════════════════════════════════════
-   PANEL DIVIDERS — Comic book page break / gutter
-═══════════════════════════════════════════════════════════ */
 .panel-div {
   position: relative;
   z-index: 1;
@@ -913,10 +852,6 @@ body {
 .ptri { font-size: 7px; }
 .ptri.flip { transform: scaleX(-1); display: inline-block; }
 
-
-/* ═══════════════════════════════════════════════════════════
-   ANALYZER SECTION — Emergency core panel
-═══════════════════════════════════════════════════════════ */
 .analyzer-section {
   position: relative;
   z-index: 1;
@@ -925,7 +860,6 @@ body {
   margin: 0 auto;
 }
 
-/* Comic panel jagged top decoration */
 .az-panel-top {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -1000,14 +934,12 @@ body {
   font-style: italic;
 }
 
-/* Container stack */
 .analyzer-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* ── INPUT CARD ── */
 .input-card {
   border-color: var(--superman-red) !important;
   background: rgba(5,3,15,0.9) !important;
@@ -1089,14 +1021,12 @@ body {
   color: var(--text-muted);
 }
 
-/* Input actions group — wraps image btn + analyze btn */
 .input-actions {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-/* Image upload button — matches the analyze button style but secondary */
 .btn-img-upload {
   display: inline-flex;
   align-items: center;
@@ -1128,7 +1058,6 @@ body {
   box-shadow: 3px 3px 0 #000, 0 0 12px rgba(0,48,135,0.5);
 }
 
-/* Image preview block — shown below textarea when image is attached */
 .img-preview-wrap {
   margin-top: 10px;
   border: 2px solid rgba(10,75,181,0.4);
@@ -1176,7 +1105,6 @@ body {
 }
 .img-remove-btn:hover { background: #000; }
 
-/* Analyze button — bold comic action style */
 .btn-analyze {
   display: inline-flex;
   align-items: center;
@@ -1205,7 +1133,6 @@ body {
 }
 .btn-analyze:disabled { opacity: .4; cursor: not-allowed; transform: none; }
 
-/* ── LOADING ── */
 .loading-card {
   text-align: center;
   padding: 44px 32px;
@@ -1254,14 +1181,12 @@ body {
   box-shadow: 0 0 10px var(--superman-red);
 }
 
-/* ── RESULTS ── */
 .result-section {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* Severity card */
 .severity-card { padding: 20px 22px; }
 .severity-header {
   display: flex;
@@ -1338,7 +1263,6 @@ body {
 .meter-dots .dot.active-high     { background: #e85500; box-shadow: 0 0 6px rgba(232,85,0,.6); }
 .meter-dots .dot.active-critical { background: var(--superman-red); box-shadow: 0 0 8px var(--superman-red); }
 
-/* Result card */
 .result-card { padding: 20px 22px; }
 .result-row {
   display: grid;
@@ -1367,7 +1291,6 @@ body {
   text-shadow: 2px 2px 0 var(--superman-red), 0 0 20px rgba(255,221,0,0.3); 
 }
 
-/* Action / advice lists */
 .actions-list, .advice-list {
   display: flex;
   flex-direction: column;
@@ -1426,7 +1349,6 @@ body {
   margin-top: 1px;
 }
 
-/* Buttons */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -1455,7 +1377,6 @@ body {
   margin-top: 4px;
 }
 
-/* Error card */
 .error-card {
   text-align: center;
   padding: 44px;
@@ -1473,10 +1394,6 @@ body {
 }
 .error-card p { color: var(--text-muted); margin-bottom: 22px; font-family: var(--f-news); font-size: 13px; }
 
-
-/* ═══════════════════════════════════════════════════════════
-   GUIDES SECTION — Comic book panels grid
-═══════════════════════════════════════════════════════════ */
 .guides-section {
   position: relative;
   z-index: 1;
@@ -1537,7 +1454,6 @@ body {
   box-shadow: 8px 8px 0px #000, 10px 10px 0px rgba(200,16,46,0.3) !important;
 }
 
-/* Panel number — massive watermark */
 .guide-panel-num {
   position: absolute;
   top: -10px; right: 12px;
@@ -1551,7 +1467,6 @@ body {
   text-shadow: 3px 3px 0 rgba(0,0,0,0.15);
 }
 
-/* Top color band per card */
 .guide-card::after {
   content: '';
   position: absolute;
@@ -1602,10 +1517,6 @@ body {
   text-shadow: 0 0 8px rgba(255,221,0,0.5);
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   CONTACTS SECTION — Emergency dial
-═══════════════════════════════════════════════════════════ */
 .contacts-section {
   position: relative;
   z-index: 1;
@@ -1671,10 +1582,6 @@ body {
 }
 .contact-card:hover .contact-arrow { color: var(--superman-gold); transform: translateX(5px); }
 
-
-/* ═══════════════════════════════════════════════════════════
-   FOOTER — Daily Planet masthead
-═══════════════════════════════════════════════════════════ */
 .footer {
   position: relative;
   z-index: 1;
@@ -1731,10 +1638,6 @@ body {
   letter-spacing: 2px;
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   ANIMATIONS
-═══════════════════════════════════════════════════════════ */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1796,10 +1699,6 @@ body {
   80%       { transform: translateX(3px); }
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
   .navbar { padding: 0 18px; height: 60px; }
   .nav-respond-btn { display: none; }
@@ -1847,4 +1746,363 @@ body {
   .daily-planet-bar { display: none; }
   .navbar { top: 0; }
   .top-left, .top-right { top: 60px; }
+}
+
+.btn-mic {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  color: var(--superman-gold);
+  font-family: var(--f-display);
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 10px 16px;
+  border: 2px solid var(--superman-gold);
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #000;
+  transition: transform .1s, box-shadow .1s, background .1s, color .1s;
+  text-transform: uppercase;
+}
+.btn-mic:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #000;
+  background: rgba(255,221,0,0.12);
+}
+.btn-mic.recording {
+  background: var(--superman-red);
+  border-color: var(--superman-red);
+  color: #fff;
+  animation: blink 0.8s ease-in-out infinite;
+  box-shadow: 3px 3px 0 #000, 0 0 14px rgba(200,16,46,0.5);
+}
+.btn-mic:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+
+.guide-link-hint {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: var(--f-news);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--superman-blue-b);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(10,75,181,0.3);
+  transition: color .15s, border-color .15s;
+}
+.guide-link:hover .guide-link-hint {
+  color: var(--superman-gold);
+  border-color: var(--superman-gold);
+}
+
+.btn-camera {
+  color: var(--superman-gold) !important;
+  border-color: var(--superman-gold) !important;
+}
+.btn-camera:hover {
+  background: rgba(255,221,0,0.12) !important;
+  color: var(--superman-gold) !important;
+  box-shadow: 5px 5px 0 #000 !important;
+}
+.btn-camera.has-image {
+  background: rgba(255,221,0,0.18) !important;
+  border-color: var(--superman-gold) !important;
+  box-shadow: 3px 3px 0 #000, 0 0 12px rgba(255,221,0,0.3) !important;
+}
+
+.btn-voice {
+  color: var(--superman-red) !important;
+  border-color: var(--superman-red) !important;
+}
+.btn-voice:hover {
+  background: rgba(200,16,46,0.12) !important;
+  color: var(--superman-red) !important;
+  box-shadow: 5px 5px 0 #000 !important;
+}
+.btn-voice.listening {
+  background: rgba(200,16,46,0.18) !important;
+  border-color: var(--superman-red-b) !important;
+  color: var(--superman-red-b) !important;
+  box-shadow: 3px 3px 0 #000, 0 0 12px rgba(200,16,46,0.4) !important;
+  animation: voicePulse 1s ease-in-out infinite;
+}
+@keyframes voicePulse {
+  0%, 100% { box-shadow: 3px 3px 0 #000, 0 0 12px rgba(200,16,46,0.4); }
+  50%       { box-shadow: 3px 3px 0 #000, 0 0 22px rgba(200,16,46,0.75); }
+}
+
+.contact-number {
+  cursor: pointer;
+  transition: color .15s, text-shadow .15s;
+  position: relative;
+}
+.contact-number:hover {
+  color: #fff !important;
+  text-shadow: 2px 2px 0 var(--superman-red), 0 0 24px rgba(255,255,255,0.5) !important;
+}
+.contact-number::after {
+  content: '⎘';
+  font-size: 11px;
+  font-family: var(--f-body);
+  color: var(--superman-gold);
+  opacity: 0;
+  position: absolute;
+  top: 2px;
+  right: -16px;
+  transition: opacity .15s;
+}
+.contact-number:hover::after { opacity: 1; }
+
+.copy-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--superman-blue);
+  color: var(--superman-gold);
+  font-family: var(--f-display);
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border: 3px solid var(--superman-gold);
+  box-shadow: 5px 5px 0 #000;
+  z-index: 9999;
+  pointer-events: none;
+  transition: transform .25s cubic-bezier(.22,.68,0,1.4), opacity .25s;
+  opacity: 0;
+  text-shadow: 1px 1px 0 #000;
+}
+.copy-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.nearby-section {
+  position: relative;
+  z-index: 1;
+  padding: 48px 64px 64px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.nearby-search-wrap {
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.nearby-search-box {
+  display: flex;
+  align-items: stretch;
+  border: 3px solid var(--superman-red);
+  box-shadow: 5px 5px 0 #000, 8px 8px 0 rgba(200,16,46,0.3);
+  background: rgba(5,3,15,0.92);
+  overflow: hidden;
+}
+.nearby-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  color: var(--superman-red);
+  flex-shrink: 0;
+  border-right: 2px solid rgba(200,16,46,0.2);
+}
+.nearby-city-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--f-news);
+  font-size: 15px;
+  padding: 14px 16px;
+  letter-spacing: 0.5px;
+}
+.nearby-city-input::placeholder {
+  color: rgba(138,128,112,0.45);
+  font-style: italic;
+}
+.nearby-city-input:focus { background: rgba(200,16,46,0.03); }
+.nearby-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--superman-red);
+  color: #fff;
+  font-family: var(--f-display);
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  padding: 0 22px;
+  border: none;
+  border-left: 3px solid #000;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #000;
+  transition: background .12s, color .12s;
+  white-space: nowrap;
+  clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.nearby-search-btn:hover {
+  background: var(--superman-gold);
+  color: #000;
+  text-shadow: none;
+}
+.nearby-hint {
+  margin-top: 10px;
+  font-family: var(--f-news);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  font-style: italic;
+  text-align: center;
+}
+
+.nearby-city-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  background: rgba(0,48,135,0.15);
+  border: 3px solid var(--superman-blue);
+  border-left: 6px solid var(--superman-gold);
+  box-shadow: 4px 4px 0 #000;
+  margin-bottom: 28px;
+}
+.nearby-city-icon { font-size: 24px; flex-shrink: 0; }
+.nearby-city-name {
+  font-family: var(--f-display);
+  font-size: 30px;
+  letter-spacing: 4px;
+  color: var(--superman-gold);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 #000;
+  flex: 1;
+}
+.nearby-city-tag {
+  font-family: var(--f-news);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--superman-blue-b);
+  text-transform: uppercase;
+  border: 1px solid rgba(10,75,181,0.4);
+  padding: 4px 10px;
+}
+
+.nearby-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.nearby-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.nearby-col-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 3px solid #000;
+  font-family: var(--f-display);
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #000;
+  box-shadow: 3px 3px 0 #000;
+  position: relative;
+  overflow: hidden;
+}
+.nearby-col-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 50%, rgba(255,255,255,0.04), transparent 60%);
+  pointer-events: none;
+}
+.nearby-col-header.hosp  { background: rgba(200,16,46,0.2);  color: #ffc8c8; border-color: var(--superman-red); }
+.nearby-col-header.police { background: rgba(0,48,135,0.2);  color: #c8d8ff; border-color: var(--superman-blue-b); }
+.nearby-col-header.fire   { background: rgba(232,85,0,0.2);  color: #ffd8b0; border-color: #e85500; }
+.nearby-col-icon { font-size: 18px; flex-shrink: 0; }
+
+.nearby-place-card {
+  background: rgba(5,3,15,0.9);
+  border: 2px solid rgba(255,255,255,0.06);
+  padding: 14px 16px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.7);
+  transition: transform .12s, box-shadow .12s, border-color .15s;
+  position: relative;
+  animation: fadeUp .35s ease both;
+}
+.nearby-place-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #000;
+}
+.nearby-place-card.hosp:hover   { border-color: var(--superman-red); box-shadow: 5px 5px 0 #000, 6px 6px 0 rgba(200,16,46,0.3); }
+.nearby-place-card.police:hover { border-color: var(--superman-blue-b); box-shadow: 5px 5px 0 #000, 6px 6px 0 rgba(0,48,135,0.3); }
+.nearby-place-card.fire:hover   { border-color: #e85500; box-shadow: 5px 5px 0 #000, 6px 6px 0 rgba(232,85,0,0.3); }
+
+.nearby-place-card:nth-child(1) { animation-delay: .04s; }
+.nearby-place-card:nth-child(2) { animation-delay: .09s; }
+.nearby-place-card:nth-child(3) { animation-delay: .14s; }
+.nearby-place-card:nth-child(4) { animation-delay: .19s; }
+.nearby-place-card:nth-child(5) { animation-delay: .24s; }
+
+.nearby-place-name {
+  font-family: var(--f-cond);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+.nearby-place-addr {
+  font-family: var(--f-news);
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.nearby-place-card.hosp::before  { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--superman-red); }
+.nearby-place-card.police::before{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--superman-blue-b); }
+.nearby-place-card.fire::before  { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #e85500; }
+
+.nearby-notfound {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 36px;
+  border-color: rgba(255,221,0,0.3) !important;
+}
+.notfound-icon { font-size: 44px; margin-bottom: 16px; }
+.nearby-notfound h3 {
+  font-family: var(--f-display);
+  font-size: 28px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--superman-gold);
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 10px;
+}
+.nearby-notfound p {
+  font-family: var(--f-news);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-style: italic;
+}
+.nearby-notfound strong { color: var(--superman-gold); }
+
+@media (max-width: 900px) {
+  .nearby-section { padding: 40px 20px 48px; }
+  .nearby-cols { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 560px) {
+  .nearby-search-box { flex-wrap: wrap; }
+  .nearby-search-btn { width: 100%; padding: 12px; justify-content: center; clip-path: none; border-left: none; border-top: 3px solid #000; }
+  .input-actions { flex-wrap: wrap; gap: 6px; }
 }
