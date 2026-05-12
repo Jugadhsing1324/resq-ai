@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "AIzaSyDXNjtWUHSzUmaVLTzNb-xgmMnzYMXphJw"; // <-- Replace this
+const GEMINI_API_KEY = "AIzaSyAXKiGzgNBPYG_YmEFAsDjhVOtlwES9mN0"; // <-- Replace this
 
 const GEMINI_MODEL = "gemini-3.1-flash-lite";
 
